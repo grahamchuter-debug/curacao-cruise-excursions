@@ -29,6 +29,17 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
   transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Catamaran sailing cards — keep catamaran in frame (bottom-left of aerial photo) */
+.card-media img[src*="catamaran-sailing.png"] {
+  object-position: 35% 75%;
+}
+
+/* Cruise port — keep Westerdam and Handelskade buildings in frame when cropped */
+.card-media img[src*="cruise-port.png"],
+.info-image img[src*="cruise-port.png"] {
+  object-position: 55% 45%;
+}
+
 .card-hover:hover .card-media img {
   transform: scale(1.045);
 }
@@ -179,7 +190,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
     linear-gradient(135deg, rgba(12, 45, 107, 0.88) 0%, rgba(14, 95, 138, 0.78) 40%, rgba(13, 148, 136, 0.72) 75%, rgba(6, 95, 70, 0.85) 100%),
     url('../images/cruise-port.png');
   background-size: cover;
-  background-position: center;
+  background-position: 45% 50%;
   background-repeat: no-repeat;
 }
 
@@ -206,7 +217,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
     linear-gradient(135deg, rgba(7, 30, 75, 0.88) 0%, rgba(10, 50, 114, 0.78) 30%, rgba(12, 107, 158, 0.72) 65%, rgba(13, 148, 136, 0.75) 100%),
     url('../images/cruise-port.png');
   background-size: cover;
-  background-position: 38% 88%;
+  background-position: 45% 50%;
   background-repeat: no-repeat;
 }
 
@@ -306,7 +317,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
     linear-gradient(135deg, rgba(7, 89, 133, 0.72) 0%, rgba(13, 148, 136, 0.52) 60%, rgba(0, 0, 0, 0.35) 100%),
     url('../images/cruise-port.png');
   background-size: cover;
-  background-position: 38% 88%;
+  background-position: 45% 50%;
   background-repeat: no-repeat;
 }
 
@@ -347,6 +358,17 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
 @media (min-width: 1024px) {
   .hero-bg-custom[style*="klein-curacao.png"] {
     background-position: center 40%;
+  }
+}
+
+/* Cruise port hero — keep Westerdam and Handelskade in frame below headline */
+.hero-bg-custom[style*="cruise-port.png"] {
+  background-position: 45% 50%;
+}
+
+@media (min-width: 1024px) {
+  .hero-bg-custom[style*="cruise-port.png"] {
+    background-position: 50% 45%;
   }
 }
 
