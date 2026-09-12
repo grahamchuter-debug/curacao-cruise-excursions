@@ -134,7 +134,7 @@ def home() -> PageTuple:
             ("Full-day water", "Klein Curacao — boat transfer + sea-state planning"),
             ("Activity level", "Varies — town walk low; Klein and west coast higher commitment"),
             ("Return window", "Leave margin before all-aboard; confirm operator policy"),
-            ("This site", "Editorial planning — no booking checkout here"),
+            ("This site", "Planning guides + request-to-book for the Historic Walking Tour"),
         ],
         label="Curacao cruise passenger snapshot",
     )
@@ -157,9 +157,10 @@ def home() -> PageTuple:
             "guaranteed ship-return product.",
         ),
         (
-            "Do you sell tours on this site?",
-            "No. This is an independent editorial planning guide. Use the contact page for "
-            "questions about the guide itself — we do not process bookings or payments here.",
+            "Can I request a tour on this site?",
+            "Yes — you can request the Willemstad Historic Walking Tour online. Payment creates "
+            "a booking request; confirmation follows separately. Other day styles remain editorial "
+            "planning guides for now.",
         ),
     ]
 
@@ -180,14 +181,16 @@ def home() -> PageTuple:
     <p class="text-gray-600 leading-relaxed mb-8">
       USD is commonly accepted at tourist-facing points; confirm live payment notes with taxis and
       operators. Use this site to pick a coherent theme for the day, then confirm ship times
-      independently. We do not sell tours or process payments here.
+      independently. When you want a guided near-port walk, you can request the
+      <a href="/willemstad-walking-tour" class="text-ocean-600 font-medium">Willemstad Historic Walking Tour</a>
+      online.
     </p>
     <p class="flex flex-wrap gap-3 mb-2">
       <a href="/best-curacao-cruise-excursions" class="btn-ocean inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full text-sm shadow-lg">
         Compare options
       </a>
-      <a href="/curacao-cruise-port-guide" class="inline-flex items-center justify-center font-semibold px-7 py-3.5 rounded-full text-sm border border-ocean-200 text-ocean-700">
-        Port guide
+      <a href="/book/historic-walking-tour" class="inline-flex items-center justify-center font-semibold px-7 py-3.5 rounded-full text-sm border border-ocean-200 text-ocean-700">
+        Request walking tour
       </a>
     </p>
   </div>
@@ -687,21 +690,23 @@ def best_excursions() -> PageTuple:
 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {_card("/klein-curacao-day-trip", "Klein Curacao", "Full-day uninhabited island sail — compare timing to all-aboard before you commit.", image=KLEIN, alt=KLEIN_ALT, cta="Plan Klein day →")}
   {_card("/curacao-snorkeling-tours", "Snorkelling", "Reef and turtle possibilities; boat versus shore; cruise-day practicality.", media_label="Snorkel day", cta="Read snorkelling guide →")}
-  {_card("/willemstad-walking-tour", "Willemstad", "Punda, Otrobanda and Handelskade — often the calmest near-port option.", image=WILLEMSTAD, alt=WILLEMSTAD_ALT, cta="Willemstad guide →")}
+  {_card("/willemstad-walking-tour", "Willemstad", "Punda, Otrobanda and Handelskade — request the guided walking tour online when you are ready.", image=WILLEMSTAD, alt=WILLEMSTAD_ALT, cta="Willemstad guide →")}
   {_card("/curacao-cruise-port-guide", "Beach / island day", "Mambo-area beach time versus longer west-coast or island commitments — port logistics first.", image=CRUISE_PORT, alt=CRUISE_PORT_ALT, cta="Port guide →")}
   {_card("/private-curacao-tours", "Private", "Custom sequencing when ages, mobility or timing differ within one group.", image=PRIVATE_SIGN, alt=PRIVATE_SIGN_ALT, cta="Private guide →")}
 </div>
 ''', bg="bg-sand-50", pad="py-16")}
 {_prose('''
 <p class="text-gray-600 leading-relaxed mb-4">
-  These pages are planning guides. Booking is not offered on this website — if you arrange
-  anything independently, confirm inclusions, pickup logistics and timing with the operator and
-  your cruise line before you travel. Leave margin before all-aboard.
+  Most pages here are planning guides. You can
+  <a href="/book/historic-walking-tour" class="text-ocean-600 font-medium">request the Willemstad Historic Walking Tour</a>
+  online — payment creates a booking request, and confirmation is emailed separately.
+  For other day styles, confirm inclusions, pickup logistics and timing with any independent
+  operator and your cruise line before you travel. Leave margin before all-aboard.
 </p>
 ''' + related_links([
+    ("/book/historic-walking-tour", "Request walking tour"),
+    ("/willemstad-walking-tour", "Willemstad guide"),
     ("/curacao-cruise-port-guide", "Port guide"),
-    ("/klein-curacao-day-trip", "Plan Klein day"),
-    ("/curacao-snorkeling-tours", "Read snorkelling guide"),
     ("/contact", "Contact"),
 ]))}
 """
@@ -736,10 +741,10 @@ def walking() -> PageTuple:
         aria_label=WILLEMSTAD_ALT,
         breadcrumb="Willemstad",
         actions=_cta(
+            "/book/historic-walking-tour",
+            "Book now",
             "/curacao-cruise-port-guide",
             "Port guide",
-            "/best-curacao-cruise-excursions",
-            "Compare options",
         ),
         tags=["Punda", "Otrobanda", "Handelskade", "Low transfer"],
     )
@@ -750,7 +755,7 @@ def walking() -> PageTuple:
             ("Typical focus", "Punda shops / streets; Otrobanda views; Handelskade photos"),
             ("Bridge", "Queen Emma pontoon — status can change with shipping"),
             ("Activity", "Walking on uneven historic streets — pace yourself"),
-            ("Add-ons", "Beach or west coast need transfers — do not stack casually"),
+            ("Request online", "$57 per participant · confirmation emailed separately"),
         ]
     )
 
@@ -765,6 +770,16 @@ def walking() -> PageTuple:
 ''' + snap)}
 {_section('''
 <div class="max-w-3xl">
+  <div class="section-label">Request online</div>
+  <h2 class="text-2xl font-display font-bold text-gray-900 mb-4">Willemstad Historic Walking Tour</h2>
+  <p class="text-gray-600 leading-relaxed mb-4">
+    Request a guided historic walking experience for <strong>$57 per participant</strong>
+    (maximum 10 online). Payment creates a booking request — confirmation is emailed separately.
+    If we cannot confirm, you receive a full refund.
+  </p>
+  <p class="mb-6">
+    <a href="/book/historic-walking-tour" class="btn-ocean inline-flex items-center justify-center text-white font-semibold px-7 py-3 rounded-full text-sm">Book now</a>
+  </p>
   <div class="section-label">How to shape the walk</div>
   <h2 class="text-2xl font-display font-bold text-gray-900 mb-4">One side, then the other — with margin</h2>
   <p class="text-gray-600 leading-relaxed mb-4">
@@ -783,9 +798,9 @@ def walking() -> PageTuple:
 ''', bg="bg-sand-50", pad="py-16")}
 {_prose('''
 ''' + related_links([
+    ("/book/historic-walking-tour", "Book walking tour"),
     ("/curacao-cruise-port-guide", "Port guide"),
     ("/best-curacao-cruise-excursions", "Compare options"),
-    ("/private-curacao-tours", "Private tours"),
     ("/contact", "Contact"),
 ]))}
 """
@@ -906,12 +921,12 @@ def contact() -> PageTuple:
 {_prose(f'''
 <p class="text-gray-600 leading-relaxed text-lg mb-6">
   Email <a href="mailto:{EMAIL}" class="text-ocean-600 font-semibold">{EMAIL}</a>
-  for questions about this independent guide. We do not process bookings, payments or shore-excursion
-  checkouts on this website.
+  for questions about this guide or a Historic Walking Tour booking request.
+  You can also <a href="/book/historic-walking-tour" class="text-ocean-600 font-medium">request the walking tour online</a>.
 </p>
 <p class="text-gray-600 leading-relaxed mb-4">
   Please include your ship’s scheduled Willemstad / Curacao date if you are asking about planning
-  logic — we still will not invent fares or guarantee operator inventory.
+  logic — we still will not invent fares or guarantee operator inventory beyond confirmed bookings.
 </p>
 <p class="text-sm text-gray-500">Do not send payment card details by email.</p>
 ''')}
@@ -946,7 +961,9 @@ def about() -> PageTuple:
   pacing — without pretending every highlight fits every ship schedule.
 </p>
 <p class="text-gray-600 leading-relaxed mb-4">
-  We are not a cruise line, not a pier operator, and not a booking marketplace.
+  We are not a cruise line and not a pier operator. Most pages are editorial planning guides.
+  The Willemstad Historic Walking Tour can be requested online as a paid booking request —
+  confirmation is separate.
 </p>
 <p class="text-gray-600 leading-relaxed">
   Read our <a href="/methodology" class="text-ocean-600 font-medium">methodology</a>
@@ -990,7 +1007,8 @@ def privacy() -> PageTuple:
   statistics.
 </p>
 <p class="text-gray-600 leading-relaxed mb-4">
-  This site does not operate a booking checkout and does not ask for payment card details.
+  Payment card details for the Historic Walking Tour request are collected by a hosted payment
+  checkout page, not on this website's editorial pages. Editorial pages do not ask for card details.
 </p>
 <p class="text-sm text-gray-500">Questions: <a href="mailto:{EMAIL}" class="text-ocean-600">{EMAIL}</a>.</p>
 ''')}
@@ -1031,7 +1049,8 @@ def terms() -> PageTuple:
 </p>
 <p class="text-gray-600 leading-relaxed mb-4">
   To the fullest extent permitted by law, we disclaim liability for decisions made solely on the
-  basis of this website. Nothing here creates a consumer booking relationship.
+  basis of editorial planning pages. Online booking requests for the Historic Walking Tour create
+  a paid request relationship as described at checkout — payment is not instant confirmation.
 </p>
 <p class="text-sm text-gray-500">Contact: <a href="mailto:{EMAIL}" class="text-ocean-600">{EMAIL}</a>.</p>
 ''')}
@@ -1070,7 +1089,7 @@ def methodology() -> PageTuple:
   <li>Use soft claims (“often”, “typically”, “confirm live”) instead of invented schedules or fares.</li>
   <li>Image policy: cruise-port, Klein, Willemstad and private-sign assets only when themed; CSS-only heroes otherwise.</li>
   <li>Mention Mambo Beach, Kenepa, Hato, Shete Boka and Christoffel only as contextual duration cues — no standalone pages.</li>
-  <li>No ship schedules imported as facts; commerce and booking checkout remain deferred.</li>
+  <li>No ship schedules imported as facts; only the Willemstad Historic Walking Tour is offered as an online request-to-book product.</li>
   <li>Avoid review-aggregate, product-offer and local-business schema types; no fake popularity language.</li>
 </ul>
 <p class="text-gray-600 leading-relaxed">

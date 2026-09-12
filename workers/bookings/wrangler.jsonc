@@ -1,0 +1,36 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "curacao-bookings-test",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "dev": {
+    "ip": "localhost",
+    "port": 8798,
+    "local_protocol": "http"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "curacao-bookings-test",
+      "database_id": "75e79762-fa1d-4d0b-8116-0ecb5d3076c8",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "PAYMENTS_MODE": "test",
+    "BOOKINGS_ENABLED": "true",
+    "EMAIL_SENDING_ENABLED": "false",
+    "EMAIL_FROM": "bookings@notifications.wowatour.com",
+    "EMAIL_FROM_NAME": "Curacao Cruise Excursions",
+    "EMAIL_REPLY_TO": "hello@curacaocruiseexcursions.com",
+    "CORS_ALLOWED_ORIGINS": "http://localhost:8917,http://127.0.0.1:8917,https://curacaocruiseexcursions.com,https://www.curacaocruiseexcursions.com",
+    "SITE_BASE_URL": "https://curacaocruiseexcursions.com",
+    "ORIGINATING_SITE": "curacaocruiseexcursions.com",
+    "ORIGINATING_PORT": "Willemstad, Curacao",
+    "OPERATOR_PORTAL_BASE_URL": "https://curacao-bookings-test.dark-violet-8d91.workers.dev"
+  }
+}

@@ -7,13 +7,23 @@
   },
   "scripts": {
     "css": "tailwindcss -i ./css/input.css -o ./css/utilities.css --minify && cat css/utilities.css css/site.components.css > css/site.css && cat css/a11y.css >> css/site.css",
-    "build": "npm run css && python3.14 scripts/build-curacao-site.py",
+    "build": "npm run css && python3.14 scripts/build-curacao-site.py && python3.14 scripts/generate-book-pages.py",
     "check": "python3.14 scripts/qa-curacao-site.py",
     "deploy": "npm run build && npm run check && wrangler deploy",
-    "preview": "python3 -m http.server 8917"
+    "preview": "python3 -m http.server 8917",
+    "test:booking": "npx --yes tsx --test shared/world-booking/booking.test.ts workers/bookings/src/operator-refund.test.ts",
+    "bookings:dev": "wrangler dev --config workers/bookings/wrangler.jsonc --port 8798",
+    "bookings:migrate:test": "wrangler d1 migrations apply curacao-bookings-test --remote --config workers/bookings/wrangler.jsonc",
+    "bookings:migrate:prod": "wrangler d1 migrations apply curacao-bookings-prod --remote --config workers/bookings/wrangler.prod.jsonc",
+    "bookings:deploy:test": "wrangler deploy --config workers/bookings/wrangler.jsonc",
+    "bookings:deploy:prod": "wrangler deploy --config workers/bookings/wrangler.prod.jsonc"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17",
+    "typescript": "^5.9.3",
     "wrangler": "^4.94.0"
+  },
+  "dependencies": {
+    "stripe": "^22.6.1"
   }
 }

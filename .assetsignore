@@ -1,8 +1,6 @@
-node_modules
-.wrangler
-.git
-_legacy_phase17a
 scripts
+shared
+workers
 images/quarantine
 images/review
 __pycache__
@@ -26,3 +24,8 @@ css/utilities.css
 css/site.components.css
 css/a11y.css
 protected_routes.json
+tsconfig.json
+node_modules
+.wrangler
+.git
+_legacy_phase17a

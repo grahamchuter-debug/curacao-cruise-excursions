@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""QA gates for Curacao Cruise Excursions Phase 17B."""
+"""QA gates for Curacao Cruise Excursions Phase 17B / 17D."""
 from __future__ import annotations
 
 import re
@@ -28,8 +28,9 @@ FORBIDDEN_PHRASES = [
     "shoreexcursionsgroup.com",
     "cacucurcolhis",
     "cacuhfdysnk",
+    "cacucavbch",
+    "SEG_MANUAL",
     "stripe",
-    "/book/",
     "hero-flamingos",
     "bonaire",
     "coracocruisexcursions",
