@@ -6,7 +6,7 @@ window.CUR_COMMERCIAL = {
   bookingsApiUrl: "https://curacao-bookings-prod.dark-violet-8d91.workers.dev",
   email: "hello@curacaocruiseexcursions.com",
   siteName: "Curacao Cruise Excursions",
-  defaultPublicBookingStatus: "PRODUCTION_READY_LOCKED",
+  defaultPublicBookingStatus: "BOOKING_ENABLED",
   cancellation:
     "Free cancellation outside 14 days before your excursion. From the 14th day before your excursion, bookings are non-refundable.",
   paymentNotConfirmation:
@@ -32,7 +32,7 @@ window.CUR_COMMERCIAL = {
       guestModel: "quantity_only",
       durationLabel: "2 hours 30 minutes",
       maxGuests: 10,
-      publicBookingStatus: "PRODUCTION_READY_LOCKED",
+      publicBookingStatus: "BOOKING_ENABLED",
       displayPrice: "$57 per participant · maximum 10 online",
     },
   },

@@ -126,7 +126,7 @@ export async function enqueuePostPaymentNotifications(env: NotifyEnv, booking: B
       payload: {
         to: product.supplier.notificationEmail,
         subject: ops.subject,
-        heading: "NEW GRENADA BOOKING REQUEST",
+        heading: "NEW CURACAO BOOKING REQUEST",
         text: renderOpsRequestEmailText(ops.shell),
         html: renderOpsRequestEmailHtml(ops.shell),
       },
