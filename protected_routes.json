@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/",
+    "file": "index.html",
+    "kind": "home"
+  },
+  {
+    "path": "/klein-curacao-day-trip",
+    "file": "klein-curacao-day-trip/index.html",
+    "kind": "attraction"
+  },
+  {
+    "path": "/curacao-snorkeling-tours",
+    "file": "curacao-snorkeling-tours/index.html",
+    "kind": "attraction"
+  },
+  {
+    "path": "/curacao-cruise-port-guide",
+    "file": "curacao-cruise-port-guide/index.html",
+    "kind": "guide"
+  },
+  {
+    "path": "/best-curacao-cruise-excursions",
+    "file": "best-curacao-cruise-excursions/index.html",
+    "kind": "hub"
+  },
+  {
+    "path": "/willemstad-walking-tour",
+    "file": "willemstad-walking-tour/index.html",
+    "kind": "attraction"
+  },
+  {
+    "path": "/private-curacao-tours",
+    "file": "private-curacao-tours/index.html",
+    "kind": "attraction"
+  },
+  {
+    "path": "/contact",
+    "file": "contact/index.html",
+    "kind": "trust"
+  },
+  {
+    "path": "/about",
+    "file": "about/index.html",
+    "kind": "trust"
+  },
+  {
+    "path": "/privacy",
+    "file": "privacy/index.html",
+    "kind": "trust"
+  },
+  {
+    "path": "/terms",
+    "file": "terms/index.html",
+    "kind": "trust"
+  },
+  {
+    "path": "/methodology",
+    "file": "methodology/index.html",
+    "kind": "trust"
+  }
+]

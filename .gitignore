@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+.css-cache/
+__pycache__/
+*.pyc
+.env
+.env.*
+.dev.vars
+package-lock.json
+.DS_Store
+css/utilities.css
